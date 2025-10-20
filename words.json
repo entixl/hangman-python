@@ -1,5 +1,5 @@
 {
-	"common": [
+	"easy": [
 		"cat",
 		"dog",
 		"bat",
@@ -62,7 +62,7 @@
 		"froglet",
 		"toad"
 	],
-	"less_common": [
+	"normal": [
 		"aardvark",
 		"alligator",
 		"alpaca",
@@ -177,7 +177,7 @@
 		"yak",
 		"zebra"
 	],
-	"rare": [
+	"hard": [
 		"chough",
 		"clam",
 		"cockroach",

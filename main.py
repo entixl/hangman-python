@@ -1,79 +1,79 @@
-import random 
-import json
-
-GREEN = "\033[42m"  
-YELLOW = "\033[43m" 
-GRAY = "\033[100m"  
-RESET = "\033[0m"
+import json 
+from random import choice
 
 def main():
-    with open("words.json" , "r") as f:
-        words = json.load(f)
+    with open("words.json" ,"r") as f:
+        total_words = json.load(f)
     difficulty_level = get_difficulty_level()
     rarity = get_rarity(difficulty_level)
-    word = random.choice(words[rarity])
-    print(word)
-    wrong_guess = 0
-    for i in range(6):
-        display_word(word)
-        if usr_input != word:
-            wrong_guess +=  1
-
-def get_guess(word):
-    while True:
-        try:
-            guess = input("enter your guess: ")
-            if len(guess) != len(word):
-                raise ValueError("")
-
-
-
-def wordle_display(secret, guess):
-    display = ""
-    for i, letter in enumerate(guess):
-        if letter == secret[i]:
-            display += GREEN + letter.upper()  + RESET
-        elif letter in secret:
-            display += YELLOW + letter.upper() + RESET
-        else:
-            display += GRAY + letter.upper() + RESET
-    print(display)
-
-
-wordle_display("apple", "arlie")
-
-def draw_hangman(wrong_choices):
-    hangman_art = {
-        1: (" o ",
-            "   ",
-            "   "),
-        2: (" o ",
-            " | ",
-            "   "),
-        3: (" o ",
-            "/| ",
-            "   "),
-        4: (" o ",
-            "/|\\",
-            "   "),
-        5: (" o ",
-            "/|\\",
-            "/  "),
-        6: (" o ",
-            "/|\\",
-            "/ \\")
-    }
-            
-    for line in hangman_art[wrong_choices]:
-        print("\t" , line)
-
-
-def display_word(word):
-        word_len = len(word)
-        for _ in range(word_len):
-            print("_" , end="")
+    random_word = choice(total_words[rarity]).lower()
+    display_intro(random_word , rarity)
+    continue_game = True
+    run_count = 0    
+    total_results = []
+    while continue_game :
+        run_count += 1
+        print(f"you have {6-run_count} guesses left")
+        display_layout(random_word ,run_count, total_results)
+        guess = get_guess(random_word)
+        result , continue_game = evaluate_guess(random_word,guess , continue_game)
+        total_results.append(result)
+        if not continue_game:
+            display_layout(random_word ,run_count, total_results)
+            print("you win")
+        if run_count > 6:
+            print("you lost")
+            print(f"the word was {random_word}")
+            continue_game = False
+def display_layout(random_word , run_count , total_result):
+    if total_result :
+        for result in total_result :
+            print(result)
+    for i in range(6 - run_count):
+        for _ in random_word:
+            print("-" , end="")
         print("")
 
+def evaluate_guess(random_word,guess , continue_game):
+    GREEN = "\033[42m"
+    YELLOW = "\033[43m"
+    RED = "\033[100m"
+    RESET = "\033[0m"
+    result = ""
+    if random_word == guess :
+        result += GREEN + guess + RESET
+        continue_game = False
+    for i ,letter in enumerate(guess):
+        if letter == random_word[i]:
+            result += GREEN + letter + RESET
+        elif letter in random_word : 
+            result += YELLOW + letter + RESET
+        else : 
+            result += RED + letter + RESET
+    return (result , continue_game )
+
+def get_guess(random_word):
+    while True:
+        try:
+            guess = input("Enter your guess: ").lower()
+            if len(guess) > len(random_word):
+                raise ValueError(f"guess should be less than {len(random_word)}")
+            elif len(guess) < len(random_word):
+                for _ in range(len(random_word) - len(guess)):
+                    guess += "-"
+                return guess
+            else :
+                return guess
+        except ValueError as e:
+            print(e)
+
+def get_rarity(difficulty_level):
+    if difficulty_level == 1:
+        return "easy"
+    elif difficulty_level ==2 :
+        return "normal"
+    else : 
+        return "hard"
 
 def get_difficulty_level():
     while True:
@@ -90,13 +90,14 @@ def get_difficulty_level():
         else:
             return difficulty_level
 
-
-def get_rarity(difficulty_level):
-    if difficulty_level == 1:
-        return "common"
-    elif difficulty_level ==2 :
-        return "uncommon"
-    else : 
-        return "rare"
+def display_intro(word , rarity):
+    length_word = len(word)
+    msg = f"You have choosen {rarity}\nThe word have {length_word} letters"
+    print(msg)
+    for _ in range(23):
+        print("X" , end="")
+    print("")
     
-main()
+    
+if __name__ == "__main__":
+    main()
