@@ -1,0 +1,40 @@
+"aardvark", "alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "baboon", "badger", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "capybara", "caribou", "cat", "caterpillar", "cattle", "chamois", "cheetah", "chicken", "chimpanzee", "chinchilla", "chough", "clam", "cobra", "cockroach", "cod", "coyote", "crab", "crane", "crocodile", "crow", "curlew", "deer", "dinosaur", "dog", "dogfish", "dolphin", "donkey", "dormouse", "dotterel", "dove", "dragonfly", "duck", "dugong", "dunlin", "eagle", "echidna", "eel", "eland", "elephant",  "elk", "emu", "falcon", "ferret", "finch", "fish", "flamingo", "fly", "fox", "frog", "gaur", "gazelle", "gerbil", "giraffe", "gnat", "gnu", "goat", "goldfinch", "goldfish", "goose", "gorilla", "goshawk", "grasshopper", "grouse", "guanaco", "gull", "hamster", "hare", "hawk", "hedgehog", "heron", "herring", "hippopotamus", "hornet", "horse", "human", "hummingbird", "hyena", "ibex", "ibis", "jackal", "jaguar", "jay", "jellyfish", "kangaroo", "kingfisher", "koala", "kookabura", "kouprey", "kudu", "lapwing", "lark", "{
+  "common": [
+    "cat", "dog", "bat", "rat", "cow", "pig", "bee", "ant", "fish", "duck",
+    "lion", "tiger", "bear", "horse", "sheep", "goat", "wolf", "frog", "owl",
+    "deer", "rabbit", "mouse", "crow", "swan", "hawk", "fox", "seal", "elephant",
+    "moose", "pony", "turkey", "chicken", "dove", "pony", "goose", "hen", "sparrow",
+    "pigeon", "duckling", "calf", "kitten", "puppy", "foal", "lamb", "fawn",
+    "pony", "piglet", "gosling", "chick", "cub", "otter", "squirrel", "beetle",
+    "crab", "lobster", "jellyfish", "worm", "slug", "snail", "froglet", "toad"
+  ],
+  "less_common": [
+    "aardvark", "alligator", "alpaca", "anteater", "armadillo", "baboon",
+    "badger", "beaver", "bison", "boar", "buffalo", "camel", "capybara",
+    "caribou", "caterpillar", "chameleon", "cheetah", "chimpanzee", "chinchilla",
+    "cobra", "coyote", "crane", "crocodile", "dolphin", "donkey", "dormouse",
+    "dragonfly", "dugong", "echidna", "eland", "falcon", "ferret", "finch",
+    "flamingo", "giraffe", "gnu", "goose", "gorilla", "grouse", "hamster",
+    "hedgehog", "heron", "hummingbird", "ibex", "ibis", "jackal", "jaguar",
+    "jay", "kangaroo", "kingfisher", "koala", "kookabura", "kouprey", "kudu",
+    "lapwing", "lemur", "leopard", "llama", "locust", "loris", "lyrebird",
+    "magpie", "mallard", "manatee", "mandrill", "mantis", "marten", "meerkat",
+    "mink", "mole", "mongoose", "monkey", "narwhal", "newt", "nightingale",
+    "octopus", "okapi", "opossum", "oryx", "ostrich", "otter", "ox", "panther",
+    "parrot", "pelican", "penguin", "porcupine", "porpoise", "quetzal", "raccoon",
+    "reindeer", "rhinoceros", "salamander", "sandpiper", "scorpion", "seahorse",
+    "shark", "skunk", "spider", "squid", "starling", "stingray", "tapir", "tarsier",
+    "termite", "viper", "vulture", "walrus", "wolverine", "wombat", "woodpecker",
+    "yak", "zebra"
+  ],
+  "rare": [
+    "chough", "clam", "cockroach", "dotterel", "dunlin", "gaur", "guanaco",
+    "kouprey", "larkspur", "lapwing", "locust", "louse", "mallard", "mantis",
+    "marten", "mink", "quelea", "rook", "sand-dollar", "spoonbill", "wildcat",
+    "woodcock", "axolotl", "coati", "dik-dik", "echinoderm", "fossa", "gibbon",
+    "goral", "hartebeest", "hoatzin", "ibex", "jacana", "kakapo", "kitti", "kiwi",
+    "koru", "langur", "llama", "lorikeet", "manakin", "marlin", "narwhal", "numbat",
+    "oystercatcher", "pangolin", "peccary", "potoroo", "quokka", "quoll", "redback",
+    "shoveler", "tamarin", "tuatara", "urial", "viscacha", "wobbegong", "zorilla"
+  ]
+} 
