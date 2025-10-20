@@ -1,9 +1,7 @@
 import json 
 from random import choice
 
-def main():
-    with open("words.json" ,"r") as f:
-        total_words = json.load(f)
+def game(total_words):
     difficulty_level = get_difficulty_level()
     rarity = get_rarity(difficulty_level)
     random_word = choice(total_words[rarity]).lower()
@@ -33,7 +31,6 @@ def display_layout(random_word , run_count , total_result):
         for _ in random_word:
             print("-" , end="")
         print("")
-
 def evaluate_guess(random_word,guess , continue_game):
     GREEN = "\033[42m"
     YELLOW = "\033[43m"
@@ -66,7 +63,6 @@ def get_guess(random_word):
                 return guess
         except ValueError as e:
             print(e)
-
 def get_rarity(difficulty_level):
     if difficulty_level == 1:
         return "easy"
@@ -98,6 +94,8 @@ def display_intro(word , rarity):
         print("X" , end="")
     print("")
     
-    
+
 if __name__ == "__main__":
-    main()
+    with open("words.json" ,"r") as f:
+        total_words = json.load(f)
+    game(total_words)
