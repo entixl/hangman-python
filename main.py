@@ -75,11 +75,11 @@ def get_guess(random_word):
 
 def get_rarity(difficulty_level):
     if difficulty_level == 1:
-        return "4_letter"
+        return "4_letter_words"
     elif difficulty_level == 2:
-        return "5_letter"
+        return "5_letter_words"
     else:
-        return "6_letter"
+        return "6_letter_words"
 
 def get_difficulty_level():
     while True:
