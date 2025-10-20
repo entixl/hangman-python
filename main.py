@@ -7,7 +7,7 @@ def game(total_words):
     random_word = choice(total_words[rarity]).lower()
     display_intro(random_word, difficulty_level)
     continue_game = True
-    guess_count = 6
+    guess_count = int(input("Enter how many guesses you want: "))
     total_results = []
     
     while continue_game and guess_count > 0:
