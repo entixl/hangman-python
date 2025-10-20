@@ -5,7 +5,7 @@ def game(total_words):
     difficulty_level = get_difficulty_level()
     rarity = get_rarity(difficulty_level)
     random_word = choice(total_words[rarity]).lower()
-    display_intro(random_word, rarity)
+    display_intro(random_word, difficulty_level)
     continue_game = True
     guess_count = 6
     total_results = []
@@ -95,9 +95,15 @@ def get_difficulty_level():
         except ValueError:
             print("Enter either 1, 2 or 3")
 
-def display_intro(word, rarity):
+def display_intro(word, difficulty_level):
     length_word = len(word)
-    msg = f"You have choosen {rarity}\nThe word have {length_word} letters"
+    if difficulty_level == 1 :
+        difficulty = "easy"
+    elif difficulty_level == 2 :
+        difficulty = "normal"
+    else : 
+        difficulty = "hard"
+    msg = f"You have choosen {difficulty}\nThe word have {length_word} letters"
     print(msg)
     for _ in range(23):
         print("X", end="")
