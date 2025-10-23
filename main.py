@@ -40,7 +40,7 @@ def display_layout(random_word, guess_count, total_result):
 def evaluate_guess(random_word, guess, continue_game):
     GREEN = "\033[42m"
     YELLOW = "\033[43m"
-    RED = "\033[100m"
+    RED = "\033[31m"
     RESET = "\033[0m"
     result = ""
     
@@ -54,7 +54,7 @@ def evaluate_guess(random_word, guess, continue_game):
             elif letter in random_word:
                 result += YELLOW + letter + RESET
             else:
-                result += RED + letter + RESET
+                result += letter if letter ==  "-" else RED + letter + RESET
     
     return (result, continue_game)
 
